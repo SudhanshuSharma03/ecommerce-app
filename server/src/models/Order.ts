@@ -78,7 +78,7 @@ const OrderSchema = new Schema<IOrder>(
       unique: true
     },
     user: {
-      type: Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId as any,
       ref: 'User',
       required: true
     },
@@ -101,7 +101,7 @@ const OrderSchema = new Schema<IOrder>(
 );
 
 // Generate order number before saving
-OrderSchema.pre('save', async function (next) {
+OrderSchema.pre('save', async function (this: any, next) {
   if (!this.orderNumber) {
     const timestamp = Date.now().toString(36).toUpperCase();
     const random = Math.random().toString(36).substring(2, 6).toUpperCase();

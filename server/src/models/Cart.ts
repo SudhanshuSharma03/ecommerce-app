@@ -3,7 +3,7 @@ import { ICart } from '../types';
 
 const CartItemSchema = new Schema({
   product: {
-    type: Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId as any,
     ref: 'Product',
     required: true
   },
@@ -27,7 +27,7 @@ const CartItemSchema = new Schema({
 const CartSchema = new Schema<ICart>(
   {
     user: {
-      type: Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId as any,
       ref: 'User',
       required: true,
       unique: true
@@ -48,8 +48,8 @@ const CartSchema = new Schema<ICart>(
 );
 
 // Calculate total amount before saving
-CartSchema.pre('save', function (next) {
-  this.totalAmount = this.items.reduce((total, item) => {
+CartSchema.pre('save', function (this: any, next) {
+  this.totalAmount = this.items.reduce((total: number, item: any) => {
     return total + (item.price * item.quantity);
   }, 0);
   next();
