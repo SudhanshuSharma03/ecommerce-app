@@ -61,8 +61,8 @@ const ProductDetail = () => {
       // Convert product detail to cart format
       const cartProduct: Product = {
         ...product,
-        slug: product.slug || product.name.toLowerCase().replace(/\s+/g, '-'),
-        category: typeof product.category === 'object' ? product.category.slug : product.category,
+        slug: (product as any).slug || product.name.toLowerCase().replace(/\s+/g, '-'),
+        category: typeof product.category === 'object' ? (product.category as any).slug : product.category,
         ratings: product.rating || product.ratings,
         isActive: product.isActive !== undefined ? product.isActive : true,
         isFeatured: product.isFeatured !== undefined ? product.isFeatured : false,

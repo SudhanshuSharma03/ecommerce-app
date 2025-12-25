@@ -56,13 +56,13 @@ const AdminOrders = () => {
     );
   }
 
-// Placeholder for removed mock data
-const mockOrders = [
-  {
-    _id: 'ORD001',
-    customer: {
-      name: 'Rajesh Kumar',
-      email: 'rajesh@example.com',
+// Placeholder for removed mock data (commented out)
+// const mockOrders = [
+//   {
+//     _id: 'ORD001',
+//     customer: {
+//       name: 'Rajesh Kumar',
+//       email: 'rajesh@example.com',
       phone: '9876543210',
     },
     products: [
@@ -421,7 +421,7 @@ const mockOrders = [
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Products</h3>
                   <div className="space-y-2">
-                    {selectedOrder.products.map((product, index) => (
+                    {selectedOrder.products.map((product: any, index: number) => (
                       <div key={index} className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
                         <div>
                           <p className="font-semibold text-gray-900">{product.name}</p>

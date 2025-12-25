@@ -26,13 +26,13 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-// Mock data
-const statsData = [
-  {
-    title: 'Total Revenue',
-    value: '₹12,45,890',
-    change: '+12.5%',
-    isPositive: true,
+// Mock data (kept for reference)
+// const statsData = [
+//   {
+//     title: 'Total Revenue',
+//     value: '₹12,45,890',
+//     change: '+12.5%',
+//     isPositive: true,
     icon: DollarSign,
     color: 'bg-green-500',
   },
@@ -143,10 +143,9 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        const [productsRes, ordersRes, categoriesRes] = await Promise.all([
+        const [productsRes, ordersRes] = await Promise.all([
           api.getProducts(),
           api.getOrders(),
-          api.getCategories(),
         ]);
 
         // Calculate stats from real data
