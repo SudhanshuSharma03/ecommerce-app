@@ -26,42 +26,6 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-// Mock data (kept for reference)
-// const statsData = [
-//   {
-//     title: 'Total Revenue',
-//     value: '₹12,45,890',
-//     change: '+12.5%',
-//     isPositive: true,
-    icon: DollarSign,
-    color: 'bg-green-500',
-  },
-  {
-    title: 'Total Orders',
-    value: '1,284',
-    change: '+8.2%',
-    isPositive: true,
-    icon: ShoppingBag,
-    color: 'bg-blue-500',
-  },
-  {
-    title: 'Total Customers',
-    value: '892',
-    change: '+15.3%',
-    isPositive: true,
-    icon: Users,
-    color: 'bg-purple-500',
-  },
-  {
-    title: 'Products Sold',
-    value: '2,156',
-    change: '-3.2%',
-    isPositive: false,
-    icon: Package,
-    color: 'bg-orange-500',
-  },
-];
-
 const revenueData = [
   { month: 'Jan', revenue: 45000, orders: 120 },
   { month: 'Feb', revenue: 52000, orders: 142 },
